@@ -42,6 +42,4 @@ This project is licensed under the [LICENSE](LICENSE). See the LICENSE file for 
 ## Acknowledgements
 Special thanks to the developers of the machine learning algorithms used in this app.
 
-![Footer Image](footer.png)
-
 © 2025 AI Image Generator App. All rights reserved.

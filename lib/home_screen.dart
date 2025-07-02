@@ -25,7 +25,7 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
   late Animation<double> _scaleAnimation;
   late Animation<double> _fadeAnimation;
 
-  static const String _baseUrl = 'http://image.pollinations.ai/prompt/';
+  static const String _baseUrl = 'https://image.pollinations.ai/prompt/';
 
   @override
   void initState() {
@@ -173,18 +173,14 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
                 padding: EdgeInsets.symmetric(vertical: 20),
                 child: Column(
                   children: [
-                    Icon(
-                      Icons.auto_awesome,
-                      size: 48,
-                      color: Colors.deepPurple,
-                    ),
+                    Icon(Icons.auto_awesome, size: 48, color: Colors.redAccent),
                     SizedBox(height: 12),
                     Text(
                       'AI Image Creator',
                       style: TextStyle(
                         fontSize: 28,
                         fontWeight: FontWeight.bold,
-                        color: Colors.deepPurple,
+                        color: Colors.redAccent,
                       ),
                     ),
                     Text(
@@ -207,7 +203,7 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
                     children: [
                       Row(
                         children: [
-                          Icon(Icons.edit_outlined, color: Colors.deepPurple),
+                          Icon(Icons.edit_outlined, color: Colors.redAccent),
                           SizedBox(width: 8),
                           Text(
                             'Describe your version',
@@ -243,7 +239,7 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
                           onPressed: _isLoading ? null : _generateImage,
                           style: ElevatedButton.styleFrom(
                             foregroundColor: Colors.white,
-                            backgroundColor: Colors.deepPurple,
+                            backgroundColor: Colors.redAccent,
                             shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(16),
                             ),
@@ -319,7 +315,7 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
                               children: [
                                 Icon(
                                   Icons.image_outlined,
-                                  color: Colors.deepPurple,
+                                  color: Colors.redAccent,
                                 ),
                                 Text(
                                   'Generated Artwork',
@@ -358,7 +354,7 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
                               width: double.infinity,
                               padding: EdgeInsets.all(16),
                               decoration: BoxDecoration(
-                                color: Colors.deepPurple.withOpacity(0.1),
+                                color: Colors.redAccent.withOpacity(0.1),
                                 borderRadius: BorderRadius.circular(12),
                               ),
                               child: Text(
@@ -370,63 +366,20 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
                                 ),
                               ),
                             ),
-                            SizedBox(height: 20),
-                            Center(
-                              child: ElevatedButton.icon(
-                                onPressed: _generateImage,
-                                label: Text('Regenerate'),
-                                icon: Icon(Icons.refresh),
-                                style: ElevatedButton.styleFrom(
-                                  foregroundColor: Colors.white,
-                                  backgroundColor: Colors.deepPurple,
-                                  shape: RoundedRectangleBorder(
-                                    borderRadius: BorderRadius.circular(16),
-                                  ),
-                                  padding: EdgeInsets.symmetric(
-                                    vertical: 12,
-                                    horizontal: 30,
-                                  ),
-                                  elevation: 0,
-                                ),
-                              ),
-                            ),
-                            SizedBox(height: 20),
                             Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                              mainAxisAlignment: MainAxisAlignment.end,
                               children: [
-                                ElevatedButton.icon(
-                                  onPressed: _saveImage,
-                                  label: Text('Save'),
-                                  icon: Icon(Icons.save_alt),
-                                  style: ElevatedButton.styleFrom(
-                                    foregroundColor: Colors.white,
-                                    backgroundColor: Colors.green,
-                                    shape: RoundedRectangleBorder(
-                                      borderRadius: BorderRadius.circular(16),
-                                    ),
-                                    padding: EdgeInsets.symmetric(
-                                      vertical: 12,
-                                      horizontal: 30,
-                                    ),
-                                    elevation: 0,
-                                  ),
+                                IconButton(
+                                  onPressed: _generateImage,
+                                  icon: Icon(Icons.refresh),
                                 ),
-                                ElevatedButton.icon(
+                                IconButton(
+                                  onPressed: _saveImage,
+                                  icon: Icon(Icons.save_alt),
+                                ),
+                                IconButton(
                                   onPressed: _shareImage,
-                                  label: Text('Share'),
                                   icon: Icon(Icons.share),
-                                  style: ElevatedButton.styleFrom(
-                                    foregroundColor: Colors.white,
-                                    backgroundColor: Colors.blue,
-                                    shape: RoundedRectangleBorder(
-                                      borderRadius: BorderRadius.circular(16),
-                                    ),
-                                    padding: EdgeInsets.symmetric(
-                                      vertical: 12,
-                                      horizontal: 30,
-                                    ),
-                                    elevation: 0,
-                                  ),
                                 ),
                               ],
                             ),
